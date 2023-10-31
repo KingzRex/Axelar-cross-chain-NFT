@@ -2,10 +2,48 @@
   "name": "hardhat-project",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-    "hardhat": "^2.18.3"
+    "hardhat": "^2.18.3",
+    "hardhat-gas-reporter": "^1.0.8",
+    "mocha": "^10.0.0",
+    "prettier": "^2.6.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "solhint": "^3.3.7",
+    "solidity-coverage": "^0.8.2"
+  },
+  "scripts": {
+    "test": "TEST=true mocha examples/tests",
+    "start": "node scripts/runStart",
+    "deploy": "node scripts/runDeploy",
+    "execute": "node scripts/runExecute",
+    "setup": "node scripts/runSetupEnv",
+    "check-balance": "node scripts/runCheckBalance",
+    "build": "rm -rf artifacts && npx hardhat clean && npx hardhat compile",
+    "build-aptos": "bash ./build-aptos.sh"
   },
   "dependencies": {
-    "@axelar-network/axelar-gmp-sdk-solidity": "^3.6.1",
-    "dotenv": "^16.3.1"
+    "@axelar-network/axelar-chains-config": "^0.1.0",
+    "@axelar-network/axelar-gmp-sdk-solidity": "^5.4.0",
+    "@axelar-network/axelar-local-dev": "^2.1.1-alpha.2",
+    "@axelar-network/axelarjs-sdk": "^0.12.8",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-verify": "^1.0.0",
+    "@openzeppelin/contracts": "^4.5.0",
+    "@typechain/ethers-v6": "^0.4.0",
+    "@typechain/hardhat": "^8.0.0",
+    "@types/chai": "^4.2.0",
+    "@types/mocha": ">=9.1.0",
+    "axios": "^0.27.2",
+    "bigint-buffer": "^1.1.5",
+    "bindings": "^1.5.0",
+    "bip39": "^3.0.4",
+    "chai": "^4.2.0",
+    "config": "^3.3.9",
+    "dotenv": "^16.3.1",
+    "ethers": "^5.6.5",
+    "ts-node": ">=8.0.0",
+    "typechain": "^8.2.0",
+    "typescript": ">=4.5.0",
+    "uuid": "^8.3.2"
   }
 }

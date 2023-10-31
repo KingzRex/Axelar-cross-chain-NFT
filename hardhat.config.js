@@ -2,7 +2,7 @@ require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config({ path: ".env" });
 require("solidity-coverage");
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const PRIVATE_KEY = process.env.EVM_PRIVATE_KEY;
 
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
@@ -33,4 +33,10 @@ module.exports = {
       polygonMumbai: "RZ2RSK3GIMZHPGF57NN42A9PZQET8K4FD6",
     },
   },
+
+  paths: {
+    sources: './contracts',
+    artifacts: './artifacts',
+  },
+
 };
