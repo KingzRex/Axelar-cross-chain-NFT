@@ -56,7 +56,11 @@ function getTestnetChains(chains = []) {
         const { testnetInfo } = require('@axelar-network/axelar-local-dev');
         testnet = [];
         for (const chain of chains) {
-            testnet.push(testnetInfo[chain.toLowerCase()]);
+            if (chain && testnetInfo[chain.toLowerCase()]) {
+                testnet.push(testnetInfo[chain.toLowerCase()]);
+            } else {
+                console.error('Error: Chain not found in testnetInfo:', chain);
+            }
         }
     }
 
